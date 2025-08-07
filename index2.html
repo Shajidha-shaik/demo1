@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Competition - Aditya Degree College</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #ffffff;
+    }
+
+    header {
+      background: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid #ffcc00;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #ffcc00;
+    }
+
+    header p {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #2c2c2c;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .details {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .details p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    button {
+      background: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #e6b800;
+    }
+
+    .confirmation {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: #00e676;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Aditya Degree College</h1>
+    <p>Invites you to the Ultimate Gaming Competition!</p>
+  </header>
+
+  <div class="container">
+    <h2>🎮 Gaming Competition 2025</h2>
+    <div class="details">
+      <p><strong>Date:</strong> 20th August 2025</p>
+      <p><strong>Time:</strong> 9:00 AM to 6:00 PM</p>
+      <p><strong>Venue:</strong> Aditya Degree College Main Hall</p>
+      <p><strong>Games:</strong> BGMI, Valorant, FIFA 23, Free Fire</p>
+    </div>
+
+    <form id="registrationForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email Address" required />
+      <input type="text" id="college" placeholder="College Name" required />
+      <select id="game" required>
+        <option value="">-- Select Your Game --</option>
+        <option value="BGMI">BGMI</option>
+        <option value="Valorant">Valorant</option>
+        <option value="FIFA 23">FIFA 23</option>
+        <option value="Free Fire">Free Fire</option>
+      </select>
+      <button type="submit">Register Now</button>
+    </form>
+
+    <div class="confirmation" id="confirmationMessage">
+      ✅ You have successfully registered! See you at the event!
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const confirmation = document.getElementById('confirmationMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Here, you would normally send the data to a backend/server.
+      // For now, we simply show a confirmation message.
+
+      confirmation.style.display = 'block';
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
