@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 40px;
+    }
+
+    .form-container {
+      background: #fff;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0277bd;
+    }
+
+    .success-message {
+      margin-top: 20px;
+      color: green;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>New Registration</h2>
+    <form id="registrationForm">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Enter 10-digit number">
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">-- Select Gender --</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="course">Course / Event:</label>
+      <select id="course" name="course" required>
+        <option value="">-- Select --</option>
+        <option value="Gaming Competition">Gaming Competition</option>
+        <option value="Workshop">Workshop</option>
+        <option value="Degree Program">Degree Program</option>
+        <option value="Seminar">Seminar</option>
+      </select>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      ✅ Registration successful! Thank you.
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("registrationForm");
+    const successMsg = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      // You can send the form data to your server here (using fetch or AJAX)
+      form.reset();
+      successMsg.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
